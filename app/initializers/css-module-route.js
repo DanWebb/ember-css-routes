@@ -66,7 +66,7 @@ export function initialize() {
       let link = createStylesheetLink(this.routeName);
 
       // Create a promise to let us know when the stylesheet is loaded
-      let promise = new Promise((resolve, reject) => {
+      let promise = new Ember.RSVP.Promise((resolve, reject) => {
         // Check that the link has 'onload' and 'onerror' handlers
         if (link.hasOwnProperty('onload') && link.hasOwnProperty('onerror')) {
           link.onload = () => {
